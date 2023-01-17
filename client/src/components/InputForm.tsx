@@ -16,27 +16,33 @@ const InputForm = () => {
         <label>Cart value</label>
         <input
           type="number"
+          placeholder=""
           onChange={(e) => {
             setCartValue(e.target.valueAsNumber);
           }}
+          required
         />
       </div>
       <div className="input-form__input">
         <label>Delivery distance</label>
         <input
           type="number"
+          placeholder=""
           onChange={(e) => {
             setDeliveryDistance(e.target.valueAsNumber);
           }}
+          required
         />
       </div>
       <div className="input-form__input">
         <label>Items</label>
         <input
           type="number"
+          placeholder=""
           onChange={(e) => {
             setNumberOfItems(e.target.valueAsNumber);
           }}
+          required
         />
       </div>
       <div className="input-form__input">
@@ -46,13 +52,14 @@ const InputForm = () => {
           onChange={(e: any) => {
             setDeliveryTime(e.target.valueAsDate);
           }}
+          required
         />
       </div>
       <div className="input-form__input">
         <button>Calculate</button>
       </div>
       <div>
-        <p>Delivery Fee:</p>
+        <p>Delivery Fee</p>
         <Calculator
           cartValue={cartValue}
           deliveryDistance={deliveryDistance}

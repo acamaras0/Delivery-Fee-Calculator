@@ -35,6 +35,7 @@ const Calculator: React.FC<Props> = ({ cartValue, deliveryDistance, numberOfItem
 
   // Friday rush fee
   const deliveryHour = deliveryTime.getUTCHours();
+  console.log(deliveryHour)
   if (deliveryHour >= 15 && deliveryHour <= 19) {
     deliveryFee *= 1.2;
   }
