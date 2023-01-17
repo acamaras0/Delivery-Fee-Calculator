@@ -1,13 +1,18 @@
-import React from 'react';
-
-interface Props {
+interface CalcProps {
   cartValue: number;
   deliveryDistance: number;
   numberOfItems: number;
-  deliveryTime: Date;
+  deliveryTime: number;
+  deliveryDate: Date;
 }
 
-const Calculator: React.FC<Props> = ({ cartValue, deliveryDistance, numberOfItems, deliveryTime }) => {
+const Calculator = ({
+  cartValue,
+  deliveryDistance,
+  numberOfItems,
+  deliveryTime,
+  deliveryDate,
+}: CalcProps) => {
   let deliveryFee = 0;
 
   // Small order surcharge
@@ -34,9 +39,8 @@ const Calculator: React.FC<Props> = ({ cartValue, deliveryDistance, numberOfItem
   }
 
   // Friday rush fee
-  const deliveryHour = deliveryTime.getUTCHours();
-  console.log(deliveryHour)
-  if (deliveryHour >= 15 && deliveryHour <= 19) {
+  const dayOfTheWeek = deliveryDate.getDay();
+  if (deliveryTime >= 15 && deliveryTime <= 19 && dayOfTheWeek === 5) {
     deliveryFee *= 1.2;
   }
 
@@ -51,6 +55,6 @@ const Calculator: React.FC<Props> = ({ cartValue, deliveryDistance, numberOfItem
   }
 
   return <div>{deliveryFee.toFixed(2)}€</div>;
-}
+};
 
 export default Calculator;
