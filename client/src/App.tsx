@@ -1,12 +1,12 @@
+import InputForm from "./components/InputForm/InputForm";
+import logo from "./assets/motorcycle-delivery.svg";
 import "./App.css";
-import InputForm from "./components/InputForm";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <InputForm />
-      </header>
+      <img src={logo} className="App-logo" alt="logo" />
+      <InputForm />
     </div>
   );
 }

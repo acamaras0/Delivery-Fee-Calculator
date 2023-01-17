@@ -1,0 +1,29 @@
+form.input-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: calc(9px + 2vmin);
+  color: white;
+}
+
+.input-form input {
+  margin: 10px 0;
+  padding: 6px;
+  border-radius: 8px;
+  border: none;
+  font-size: calc(6px + 2vmin);
+}
+
+.button {
+  background-color: #24ccff;
+  border-radius: 8px;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: calc(6px + 2vmin);
+  margin: 12px 2px;
+  cursor: pointer;
+}

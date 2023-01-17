@@ -1,5 +1,6 @@
 import { useState } from "react";
-import Calculator from "./Calculator";
+import Calculator from "../Calculator";
+import "./InputForm.css";
 
 const InputForm = () => {
   const [cartValue, setCartValue] = useState(0);
@@ -20,34 +21,23 @@ const InputForm = () => {
         <h2>Delivery Fee Calculator</h2>
       </div>
       <div className="input-form__input">
-        <label>Cart value</label>
-        <input
-          type="number"
-          placeholder=""
-          onChange={(e) => {
-            setCartValue(e.target.valueAsNumber);
-          }}
-          required
-        />
-      </div>
-      <div className="input-form__input">
-        <label>Delivery distance</label>
-        <input
-          type="number"
-          placeholder=""
-          onChange={(e) => {
-            setDeliveryDistance(e.target.valueAsNumber);
-          }}
-          required
-        />
-      </div>
-      <div className="input-form__input">
         <label>Items</label>
         <input
           type="number"
           placeholder=""
           onChange={(e) => {
             setNumberOfItems(e.target.valueAsNumber);
+          }}
+          required
+        />
+      </div>
+      <div className="input-form__input">
+        <label>Cart value</label>
+        <input
+          type="number"
+          placeholder=""
+          onChange={(e) => {
+            setCartValue(e.target.valueAsNumber);
           }}
           required
         />
@@ -67,10 +57,22 @@ const InputForm = () => {
         />
       </div>
       <div className="input-form__input">
-        <button>Calculate</button>
+        <label>Delivery distance</label>
+        <input
+          type="number"
+          placeholder=""
+          onChange={(e) => {
+            setDeliveryDistance(e.target.valueAsNumber);
+          }}
+          required
+        />
       </div>
       <div>
-        <p>Delivery Fee</p>
+        <button className="button" type="submit">
+          Calculate
+        </button>
+      </div>
+      <div>
         {show === true ? (
           <Calculator
             cartValue={cartValue}

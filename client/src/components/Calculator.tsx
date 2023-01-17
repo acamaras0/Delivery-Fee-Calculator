@@ -54,7 +54,12 @@ const Calculator = ({
     deliveryFee = 0;
   }
 
-  return <div>{deliveryFee.toFixed(2)}€</div>;
+  return (
+    <div style={{ color: "#24ccff" }}>
+      <p>Total: </p>
+      <p>{deliveryFee.toFixed(2)}€</p>
+    </div>
+  );
 };
 
 export default Calculator;
