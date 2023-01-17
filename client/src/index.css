@@ -1,7 +1,7 @@
 body {
   margin: 0;
-  font-family: WoltHeading-Omnes, system-ui, -apple-system, BlinkMacSystemFont,
-    Roboto, "Open Sans", sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, Roboto, "Open Sans",
+    "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
