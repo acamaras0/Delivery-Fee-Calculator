@@ -1,12 +1,14 @@
 .App {
   text-align: center;
-  background-color: #282c34e3;
+  background-color: #282c34e7;
   min-height: 100vh;
 }
 
 .App-logo {
-  height: 10vmin;
+  height: 80px;
+  width: 80px;
   pointer-events: none;
   filter: invert(68%) sepia(81%) saturate(2561%) hue-rotate(164deg)
     brightness(103%) contrast(105%);
+  margin-bottom: 10px;
 }

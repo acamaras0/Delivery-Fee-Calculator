@@ -2,7 +2,8 @@ interface CalcProps {
   cartValue: number;
   deliveryDistance: number;
   numberOfItems: number;
-  deliveryTime: number;
+  deliveryHour: number;
+  deliveryMinute: number;
   deliveryDate: Date;
 }
 
@@ -10,7 +11,8 @@ const Calculator = ({
   cartValue,
   deliveryDistance,
   numberOfItems,
-  deliveryTime,
+  deliveryHour,
+  deliveryMinute,
   deliveryDate,
 }: CalcProps) => {
   let deliveryFee = 0;
@@ -40,7 +42,8 @@ const Calculator = ({
 
   // Friday rush fee
   const dayOfTheWeek = deliveryDate.getDay();
-  if (deliveryTime >= 15 && deliveryTime <= 19 && dayOfTheWeek === 5) {
+  if (dayOfTheWeek === 5 && ((deliveryHour >= 15 && deliveryHour <= 18) || (deliveryHour === 19 && deliveryMinute === 0)))
+  {
     deliveryFee *= 1.2;
   }
 
