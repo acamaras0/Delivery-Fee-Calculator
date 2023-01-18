@@ -60,7 +60,7 @@ const Calculator = ({
   return (
     <div>
       <p>Total: </p>
-      <p style={{ color: "#24ccff" }}>{deliveryFee.toFixed(2)}€</p>
+      <p style={{ color: "#39AAC2" }}>{deliveryFee.toFixed(2)}€</p>
     </div>
   );
 };

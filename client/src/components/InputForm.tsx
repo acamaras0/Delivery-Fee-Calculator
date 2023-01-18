@@ -90,7 +90,7 @@ const InputForm = () => {
             Calculate
           </button>
         </div>
-        <div className="form-group row">
+        <div>
           {show === true ? (
             <Calculator
               cartValue={cartValue}

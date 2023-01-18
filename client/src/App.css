@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-color: #282c34e7;
+  background-color: #282c34bb;
   min-height: 100vh;
 }
 
@@ -8,7 +8,7 @@
   height: 80px;
   width: 80px;
   pointer-events: none;
-  filter: invert(68%) sepia(81%) saturate(2561%) hue-rotate(164deg)
-    brightness(103%) contrast(105%);
-  margin-bottom: 10px;
+  filter: invert(59%) sepia(6%) saturate(4291%) hue-rotate(143deg)
+    brightness(99%) contrast(89%);
+  margin-bottom: 20px;
 }
