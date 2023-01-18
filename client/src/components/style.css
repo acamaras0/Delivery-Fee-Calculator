@@ -1,0 +1,33 @@
+.calculator {
+  font-size: 20px;
+}
+
+.sum {
+  color: #39aac2;
+}
+
+.container {
+  max-width: 30rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 15px 30px 5px;
+}
+
+.bike {
+  width: 80px;
+  margin-top: -10px;
+  object-fit: cover;
+  filter: invert(60%) sepia(99%) saturate(1874%) hue-rotate(154deg)
+    brightness(104%) contrast(104%);
+}
+
+button.btn {
+  background-color: #05d1ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 15px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+}

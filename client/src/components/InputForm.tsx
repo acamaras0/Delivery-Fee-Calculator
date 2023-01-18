@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import Calculator from "./Calculator";
 import bike from "../assets/motorcycle-delivery.svg";
+import "./style.css";
 
 const InputForm = () => {
   const [cartValue, setCartValue] = useState(0);
@@ -17,25 +19,16 @@ const InputForm = () => {
   };
 
   return (
-    <div
-      className="container d-flex justify-content-center"
-      style={{
-        maxWidth: "30rem",
-        backgroundColor: "white",
-        borderRadius: "8px",
-        boxShadow: "10px 10px 30px 0px rgba(0,0,0,0.75)",
-      }}
-    >
-      <form onSubmit={handleSubmit} className="m-3">
-        <img
+    <div className="container d-flex justify-content-center">
+      <form className="m-3" onSubmit={handleSubmit}>
+        <motion.img
+          className="bike"
+          animate={{
+            x: [-100, 100, 0],
+          }}
+          transition={{ delay: 0.2 }}
           src={bike}
           alt="bike"
-          style={{
-            width: "80px",
-            marginTop: "-10px",
-            filter:
-              "invert(59%) sepia(6%) saturate(4291%) hue-rotate(143deg) brightness(99%) contrast(89%)",
-          }}
         />
         <div className="form-title mt-3">
           <h2>Delivery Fee Calculator</h2>
@@ -47,6 +40,7 @@ const InputForm = () => {
             type="number"
             step={0.01}
             placeholder=""
+            min={0}
             onChange={(e) => {
               setCartValue(e.target.valueAsNumber);
             }}
@@ -59,6 +53,7 @@ const InputForm = () => {
             className="form-control"
             type="number"
             placeholder=""
+            min={0}
             onChange={(e) => {
               setNumberOfItems(e.target.valueAsNumber);
             }}
@@ -71,6 +66,7 @@ const InputForm = () => {
             className="form-control"
             type="number"
             placeholder=""
+            min={0}
             onChange={(e) => {
               setDeliveryDistance(e.target.valueAsNumber);
             }}
@@ -82,6 +78,7 @@ const InputForm = () => {
           <input
             className="form-control"
             type="datetime-local"
+            min={new Date().toISOString().split("T")[0]}
             onChange={(e: any) => {
               const date = new Date(e.target.value).toISOString();
               const datetime = date.split("T");
@@ -96,9 +93,13 @@ const InputForm = () => {
           />
         </div>
         <div className="form-group row">
-          <button className="btn btn-info" type="submit">
+          <motion.button
+            whileHover={{ scale: 1.05, transition: { duration: 0.5 } }}
+            className="btn"
+            type="submit"
+          >
             Calculate
-          </button>
+          </motion.button>
         </div>
         <div>
           {show === true ? (

@@ -1,3 +1,6 @@
+import { motion } from "framer-motion";
+import "./style.css";
+
 interface CalcProps {
   cartValue: number;
   deliveryDistance: number;
@@ -22,14 +25,6 @@ const Calculator = ({
     deliveryFee += 10 - cartValue;
   }
 
-  // Delivery distance fee
-  deliveryFee += 2; // base fee
-  if (deliveryDistance > 1000) {
-    const additionalDistance = deliveryDistance - 1000;
-    const additionalFee = Math.ceil(additionalDistance / 500) * 1;
-    deliveryFee += additionalFee;
-  }
-
   // Number of items fee
   if (numberOfItems > 5) {
     const additionalItems = numberOfItems - 5;
@@ -37,6 +32,14 @@ const Calculator = ({
     if (numberOfItems > 12) {
       additionalFee += 1.2;
     }
+    deliveryFee += additionalFee;
+  }
+
+  // Delivery distance fee
+  deliveryFee += 2; // base fee
+  if (deliveryDistance > 1000) {
+    const additionalDistance = deliveryDistance - 1000;
+    const additionalFee = Math.ceil(additionalDistance / 500) * 1;
     deliveryFee += additionalFee;
   }
 
@@ -61,10 +64,16 @@ const Calculator = ({
   }
 
   return (
-    <div style={{ fontSize: "20px" }}>
+    <motion.div
+      animate={{
+        scale: [1, 1.2, 1],
+      }}
+      transition={{ delay: 0.2 }}
+      className="calculator"
+    >
       <p>Delivery fee✨</p>
-      <p style={{ color: "#39AAC2" }}>{deliveryFee.toFixed(2)} €</p>
-    </div>
+      <p className="sum">{deliveryFee.toFixed(2)} €</p>
+    </motion.div>
   );
 };
 
