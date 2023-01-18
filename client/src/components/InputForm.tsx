@@ -31,7 +31,7 @@ const InputForm = () => {
           alt="bike"
         />
         <div className="form-title mt-3">
-          <h2>Delivery Fee Calculator</h2>
+          <h3>Delivery Fee Calculator</h3>
         </div>
         <div className="form-group row">
           <label className="col-form-label"> Cart value </label>

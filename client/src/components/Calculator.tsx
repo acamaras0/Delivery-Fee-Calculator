@@ -18,14 +18,13 @@ const Calculator = ({
   deliveryMinute,
   deliveryDate,
 }: CalcProps) => {
-  let deliveryFee = 0;
+  
+  let deliveryFee = 2;
 
-  // Small order surcharge
   if (cartValue < 10) {
     deliveryFee += 10 - cartValue;
   }
 
-  // Number of items fee
   if (numberOfItems > 5) {
     const additionalItems = numberOfItems - 5;
     let additionalFee = additionalItems * 0.5;
@@ -35,15 +34,12 @@ const Calculator = ({
     deliveryFee += additionalFee;
   }
 
-  // Delivery distance fee
-  deliveryFee += 2; // base fee
   if (deliveryDistance > 1000) {
     const additionalDistance = deliveryDistance - 1000;
     const additionalFee = Math.ceil(additionalDistance / 500) * 1;
     deliveryFee += additionalFee;
   }
 
-  // Friday rush fee
   const dayOfTheWeek = deliveryDate.getDay();
   if (
     dayOfTheWeek === 5 &&
@@ -53,12 +49,10 @@ const Calculator = ({
     deliveryFee *= 1.2;
   }
 
-  // Maximum fee
   if (deliveryFee > 15) {
     deliveryFee = 15;
   }
 
-  // Free delivery
   if (cartValue >= 100) {
     deliveryFee = 0;
   }

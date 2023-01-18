@@ -31,3 +31,12 @@ button.btn {
   font-weight: 600;
   cursor: pointer;
 }
+
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: 23rem;
+  }
+  .bike {
+    width: 60px;
+  }
+}
