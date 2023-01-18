@@ -55,9 +55,9 @@ const Calculator = ({
   }
 
   return (
-    <div style={{ color: "#24ccff" }}>
+    <div>
       <p>Total: </p>
-      <p>{deliveryFee.toFixed(2)}€</p>
+      <p style={{ color: "#24ccff" }}>{deliveryFee.toFixed(2)}€</p>
     </div>
   );
 };

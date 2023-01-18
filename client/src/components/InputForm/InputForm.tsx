@@ -16,74 +16,76 @@ const InputForm = () => {
   };
 
   return (
-    <form className="input-form" onSubmit={handleSubmit}>
-      <div className="input-form__title">
-        <h2>Delivery Fee Calculator</h2>
-      </div>
-      <div className="input-form__input">
-        <label>Items</label>
-        <input
-          type="number"
-          placeholder=""
-          onChange={(e) => {
-            setNumberOfItems(e.target.valueAsNumber);
-          }}
-          required
-        />
-      </div>
-      <div className="input-form__input">
-        <label>Cart value</label>
-        <input
-          type="number"
-          placeholder=""
-          onChange={(e) => {
-            setCartValue(e.target.valueAsNumber);
-          }}
-          required
-        />
-      </div>
-      <div className="input-form__input">
-        <label>Delivery time</label>
-        <input
-          type="datetime-local"
-          onChange={(e: any) => {
-            const datetime = e.target.value.split("T");
-            const datestamp = new Date(datetime[0]);
-            const timestamp = datetime[1].split(":")[0];
-            setDeliveryTime(Number(timestamp));
-            setDeliveryDate(datestamp);
-          }}
-          required
-        />
-      </div>
-      <div className="input-form__input">
-        <label>Delivery distance</label>
-        <input
-          type="number"
-          placeholder=""
-          onChange={(e) => {
-            setDeliveryDistance(e.target.valueAsNumber);
-          }}
-          required
-        />
-      </div>
-      <div>
-        <button className="button" type="submit">
-          Calculate
-        </button>
-      </div>
-      <div>
-        {show === true ? (
-          <Calculator
-            cartValue={cartValue}
-            deliveryDistance={deliveryDistance}
-            numberOfItems={numberOfItems}
-            deliveryTime={deliveryTime}
-            deliveryDate={deliveryDate}
+    <div className="container">
+      <form className="input-form" onSubmit={handleSubmit}>
+        <div className="input-form__title">
+          <h2>Delivery Fee Calculator</h2>
+        </div>
+        <div className="input-form__input">
+          <label> Cart value </label>
+          <input
+            type="number"
+            placeholder=""
+            onChange={(e) => {
+              setCartValue(e.target.valueAsNumber);
+            }}
+            required
           />
-        ) : null}
-      </div>
-    </form>
+        </div>
+        <div className="input-form__input">
+          <label> Ammount of items </label>
+          <input
+            type="number"
+            placeholder=""
+            onChange={(e) => {
+              setNumberOfItems(e.target.valueAsNumber);
+            }}
+            required
+          />
+        </div>
+        <div className="input-form__input">
+          <label> Delivery distance </label>
+          <input
+            type="number"
+            placeholder=""
+            onChange={(e) => {
+              setDeliveryDistance(e.target.valueAsNumber);
+            }}
+            required
+          />
+        </div>
+        <div className="input-form__input">
+          <label> Delivery time </label>
+          <input
+            type="datetime-local"
+            onChange={(e: any) => {
+              const datetime = e.target.value.split("T");
+              const datestamp = new Date(datetime[0]);
+              const timestamp = datetime[1].split(":")[0];
+              setDeliveryTime(Number(timestamp));
+              setDeliveryDate(datestamp);
+            }}
+            required
+          />
+        </div>
+        <div>
+          <button className="button" type="submit">
+            Calculate
+          </button>
+        </div>
+        <div>
+          {show === true ? (
+            <Calculator
+              cartValue={cartValue}
+              deliveryDistance={deliveryDistance}
+              numberOfItems={numberOfItems}
+              deliveryTime={deliveryTime}
+              deliveryDate={deliveryDate}
+            />
+          ) : null}
+        </div>
+      </form>
+    </div>
   );
 };
 
