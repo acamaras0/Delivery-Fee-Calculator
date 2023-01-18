@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Calculator from "./Calculator";
-// import "./InputForm.css";
+import bike from "../assets/motorcycle-delivery.svg";
 
 const InputForm = () => {
   const [cartValue, setCartValue] = useState(0);
@@ -26,8 +26,18 @@ const InputForm = () => {
         boxShadow: "10px 10px 30px 0px rgba(0,0,0,0.75)",
       }}
     >
-      <form onSubmit={handleSubmit} style={{ margin: "5rem" }}>
-        <div className="form-title">
+      <form onSubmit={handleSubmit} className="m-3">
+        <img
+          src={bike}
+          alt="bike"
+          style={{
+            width: "80px",
+            marginTop: "-10px",
+            filter:
+              "invert(59%) sepia(6%) saturate(4291%) hue-rotate(143deg) brightness(99%) contrast(89%)",
+          }}
+        />
+        <div className="form-title mt-3">
           <h2>Delivery Fee Calculator</h2>
         </div>
         <div className="form-group row">

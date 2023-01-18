@@ -1,5 +1,5 @@
 import InputForm from "./components/InputForm";
-import logo from "./assets/motorcycle-delivery.svg";
+import logo from "./assets/wolt-logo.svg";
 import "./App.css";
 
 function App() {

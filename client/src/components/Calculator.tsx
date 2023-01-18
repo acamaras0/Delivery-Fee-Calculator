@@ -42,8 +42,11 @@ const Calculator = ({
 
   // Friday rush fee
   const dayOfTheWeek = deliveryDate.getDay();
-  if (dayOfTheWeek === 5 && ((deliveryHour >= 15 && deliveryHour <= 18) || (deliveryHour === 19 && deliveryMinute === 0)))
-  {
+  if (
+    dayOfTheWeek === 5 &&
+    ((deliveryHour >= 15 && deliveryHour <= 18) ||
+      (deliveryHour === 19 && deliveryMinute === 0))
+  ) {
     deliveryFee *= 1.2;
   }
 
@@ -58,9 +61,9 @@ const Calculator = ({
   }
 
   return (
-    <div>
-      <p>Total: </p>
-      <p style={{ color: "#39AAC2" }}>{deliveryFee.toFixed(2)}€</p>
+    <div style={{ fontSize: "20px" }}>
+      <p>Delivery fee✨</p>
+      <p style={{ color: "#39AAC2" }}>{deliveryFee.toFixed(2)} €</p>
     </div>
   );
 };
