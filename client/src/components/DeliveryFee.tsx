@@ -69,14 +69,14 @@ const DeliveryFee = ({
         <p>Delivery fee✨</p>
         <p className="sum">{deliveryFee.toFixed(2)} €</p>
       </motion.div>
-      <motion.button
-        whileHover={{ scale: 1.05, transition: { duration: 0.5 } }}
-        className="btn-return"
-      >
-        <a href="/">
+      <a href="/">
+        <motion.button
+          whileHover={{ scale: 1.05, transition: { duration: 0.5 } }}
+          className="btn-return"
+        >
           <img className="return" src={returnIcon} alt="return" />
-        </a>
-      </motion.button>
+        </motion.button>
+      </a>
     </div>
   );
 };

@@ -22,7 +22,7 @@ const Input = ({
   setShow,
 }: InputProps) => {
   return (
-    <form className="m-5">
+    <form className="m-5" onSubmit={() => setShow(true)}>
       <motion.img
         className="bike"
         animate={{
@@ -99,7 +99,6 @@ const Input = ({
           whileHover={{ scale: 1.05, transition: { duration: 0.5 } }}
           className="btn-calculate"
           type="submit"
-          onClick={() => setShow(true)}
         >
           Calculate
         </motion.button>
