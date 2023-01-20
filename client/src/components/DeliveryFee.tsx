@@ -11,7 +11,7 @@ interface CalcProps {
   deliveryDate: Date;
 }
 
-const Calculator = ({
+const DeliveryFee = ({
   cartValue,
   deliveryDistance,
   numberOfItems,
@@ -81,4 +81,4 @@ const Calculator = ({
   );
 };
 
-export default Calculator;
+export default DeliveryFee;

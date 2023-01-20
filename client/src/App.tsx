@@ -1,4 +1,4 @@
-import InputForm from "./components/InputForm";
+import Cards from "./components/Cards";
 import logo from "./assets/wolt-logo.svg";
 import "./App.css";
 
@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <img src={logo} className="App-logo" alt="logo" />
-      <InputForm />
+      <Cards />
     </div>
   );
 }
