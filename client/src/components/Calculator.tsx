@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import returnIcon from "../assets/return.svg";
 import "./style.css";
 
 interface CalcProps {
@@ -18,7 +19,6 @@ const Calculator = ({
   deliveryMinute,
   deliveryDate,
 }: CalcProps) => {
-  
   let deliveryFee = 2;
 
   if (cartValue < 10) {
@@ -58,16 +58,26 @@ const Calculator = ({
   }
 
   return (
-    <motion.div
-      animate={{
-        scale: [1, 1.2, 1],
-      }}
-      transition={{ delay: 0.2 }}
-      className="calculator"
-    >
-      <p>Delivery fee✨</p>
-      <p className="sum">{deliveryFee.toFixed(2)} €</p>
-    </motion.div>
+    <div className="m-5">
+      <motion.div
+        animate={{
+          scale: [1, 1.2, 1],
+        }}
+        transition={{ delay: 0.2 }}
+        className="calculator"
+      >
+        <p>Delivery fee✨</p>
+        <p className="sum">{deliveryFee.toFixed(2)} €</p>
+      </motion.div>
+      <motion.button
+        whileHover={{ scale: 1.05, transition: { duration: 0.5 } }}
+        className="btn-return"
+      >
+        <a href="/">
+          <img className="return" src={returnIcon} alt="return" />
+        </a>
+      </motion.button>
+    </div>
   );
 };
 

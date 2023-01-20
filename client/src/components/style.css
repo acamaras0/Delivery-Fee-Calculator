@@ -21,7 +21,7 @@
     brightness(104%) contrast(104%);
 }
 
-button.btn {
+button.btn-calculate {
   background-color: #05d1ff;
   color: white;
   border: none;
@@ -29,6 +29,21 @@ button.btn {
   padding: 10px 15px;
   font-size: 18px;
   font-weight: 600;
+  cursor: pointer;
+}
+
+.return {
+  width: 20px;
+  margin-top: -9px;
+  object-fit: cover;
+  filter: invert(100%);
+}
+button.btn-return {
+  background-color: #05d1ff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 12px 15px;
   cursor: pointer;
 }
 
