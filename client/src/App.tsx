@@ -1,4 +1,4 @@
-import Cards from "./components/Cards";
+import Cards from "./components/Card";
 import logo from "./assets/wolt-logo.svg";
 import "./App.css";
 

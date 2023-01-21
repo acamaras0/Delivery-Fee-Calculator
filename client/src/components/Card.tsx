@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Input from "./Input";
 import DeliveryFee from "./DeliveryFee";
-import "./style.css";
 
 const Cards = () => {
   const [cartValue, setCartValue] = useState(0);
