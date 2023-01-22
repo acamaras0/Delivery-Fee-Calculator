@@ -12,6 +12,11 @@ const Input = ({
   setNumberOfItems,
   setShow,
 }: InputProps) => {
+  
+  const now = new Date()
+    .toISOString()
+    .slice(0, new Date().toISOString().lastIndexOf(":"));
+
   return (
     <form className="m-5" onSubmit={() => setShow(true)}>
       <motion.img
@@ -71,7 +76,8 @@ const Input = ({
         <input
           className="form-control"
           type="datetime-local"
-          min={new Date().toISOString().split("T")[0]}
+          min={now}
+          value={now}
           onChange={(e: any) => {
             const date = new Date(e.target.value).toISOString();
             const datetime = date.split("T");
