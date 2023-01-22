@@ -42,6 +42,7 @@ button.btn-calculate {
   object-fit: cover;
   filter: invert(100%);
 }
+
 button.btn-return {
   background-color: #05d1ff;
   color: white;
