@@ -35,7 +35,7 @@ const Input = ({
         <h3>Delivery Fee Calculator</h3>
       </div>
       <div className="form-group row">
-        <label className="col-form-label"> Cart value (€)</label>
+        <label className="col-form-label"> Cart value (€) </label>
         <input
           className="form-control"
           type="number"
