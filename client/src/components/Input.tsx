@@ -31,7 +31,7 @@ const Input = ({
         src={bike}
         alt="bike"
       />
-      <div className="form-title mt-3">
+      <div className="form-title mt-3 mb-3">
         <h3>Delivery Fee Calculator</h3>
       </div>
       <div className="form-group row">

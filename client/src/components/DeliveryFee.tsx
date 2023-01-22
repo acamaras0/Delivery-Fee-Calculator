@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import logo from "../assets/wolt-logo.svg";
 import returnIcon from "../assets/return.svg";
 import { CalcProps } from "../types/types";
+import { BsStars } from "react-icons/bs";
 import "./style.css";
 
 const DeliveryFee = ({
@@ -62,7 +63,9 @@ const DeliveryFee = ({
         transition={{ delay: 0.2 }}
         className="calculator"
       >
-        <p>Delivery fee✨</p>
+        <p>
+          Delivery fee <BsStars color="#FAD02C" />
+        </p>
         <p className="sum">{deliveryFee.toFixed(2)} €</p>
       </motion.div>
       <a href="/">
