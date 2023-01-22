@@ -1,15 +1,7 @@
 import { motion } from "framer-motion";
 import returnIcon from "../assets/return.svg";
+import { CalcProps } from "../types/types";
 import "./style.css";
-
-interface CalcProps {
-  cartValue: number;
-  deliveryDistance: number;
-  numberOfItems: number;
-  deliveryHour: number;
-  deliveryMinute: number;
-  deliveryDate: Date;
-}
 
 const DeliveryFee = ({
   cartValue,

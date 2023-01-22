@@ -1,16 +1,7 @@
 import { motion } from "framer-motion";
+import { InputProps } from "../types/types";
 import bike from "../assets/motorcycle-delivery.svg";
 import "./style.css";
-
-interface InputProps {
-  setCartValue: (value: number) => void;
-  setDeliveryDate: (value: Date) => void;
-  setDeliveryDistance: (value: number) => void;
-  setDeliveryHour: (value: number) => void;
-  setDeliveryMinute: (value: number) => void;
-  setNumberOfItems: (value: number) => void;
-  setShow: (value: boolean) => void;
-}
 
 const Input = ({
   setCartValue,
