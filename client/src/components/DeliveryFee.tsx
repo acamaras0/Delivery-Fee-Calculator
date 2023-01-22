@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import logo from "../assets/wolt-logo.svg";
 import returnIcon from "../assets/return.svg";
 import { CalcProps } from "../types/types";
 import { BsStars } from "react-icons/bs";
@@ -53,9 +52,6 @@ const DeliveryFee = ({
 
   return (
     <div className="m-5">
-      <div>
-        <img src={logo} className="wolt-logo" alt="logo" />
-      </div>
       <motion.div
         animate={{
           scale: [1, 1.2, 1],

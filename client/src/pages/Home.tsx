@@ -1,8 +1,10 @@
 import { useState } from "react";
-import Input from "./Input";
-import DeliveryFee from "./DeliveryFee";
+import Header from "../components/Header";
+import Logo from "../components/Logo";
+import InputForm from "../components/InputForm";
+import DeliveryFee from "../components/DeliveryFee";
 
-const Cards = () => {
+const Home = () => {
   const [cartValue, setCartValue] = useState(0);
   const [deliveryDistance, setDeliveryDistance] = useState(0);
   const [numberOfItems, setNumberOfItems] = useState(0);
@@ -37,28 +39,35 @@ const Cards = () => {
     <div className="container d-flex justify-content-center">
       <div>
         {show === false ? (
-          <Input
-            setCartValue={UpdateCartValue}
-            setDeliveryDate={UpdateDeliveryDate}
-            setDeliveryDistance={UpdateDeliveryDistance}
-            setDeliveryHour={UpdateDeliveryHour}
-            setDeliveryMinute={UpdateDeliveryMinute}
-            setNumberOfItems={UpdateNumberOfItems}
-            setShow={UpdateShow}
-          />
+          <>
+            <Logo />
+            <Header />
+            <InputForm
+              setCartValue={UpdateCartValue}
+              setDeliveryDate={UpdateDeliveryDate}
+              setDeliveryDistance={UpdateDeliveryDistance}
+              setDeliveryHour={UpdateDeliveryHour}
+              setDeliveryMinute={UpdateDeliveryMinute}
+              setNumberOfItems={UpdateNumberOfItems}
+              setShow={UpdateShow}
+            />
+          </>
         ) : (
-          <DeliveryFee
-            cartValue={cartValue}
-            deliveryDistance={deliveryDistance}
-            numberOfItems={numberOfItems}
-            deliveryHour={deliveryHour}
-            deliveryMinute={deliveryMinute}
-            deliveryDate={deliveryDate}
-          />
+          <>
+            <Logo />
+            <DeliveryFee
+              cartValue={cartValue}
+              deliveryDistance={deliveryDistance}
+              numberOfItems={numberOfItems}
+              deliveryHour={deliveryHour}
+              deliveryMinute={deliveryMinute}
+              deliveryDate={deliveryDate}
+            />
+          </>
         )}
       </div>
     </div>
   );
 };
 
-export default Cards;
+export default Home;

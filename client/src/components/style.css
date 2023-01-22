@@ -17,7 +17,6 @@
 
 .bike-logo {
   width: 80px;
-  margin-top: -10px;
   object-fit: cover;
   filter: invert(60%) sepia(99%) saturate(1874%) hue-rotate(154deg)
     brightness(104%) contrast(104%);
@@ -52,7 +51,7 @@ button.btn-return {
   cursor: pointer;
 }
 
-label.col-form-label{
+label.col-form-label {
   letter-spacing: 0.03rem;
 }
 
@@ -65,7 +64,6 @@ label.col-form-label{
     width: 60px;
   }
   .wolt-logo {
-    margin-top: -4rem;
     width: 140px;
     object-fit: cover;
   }
