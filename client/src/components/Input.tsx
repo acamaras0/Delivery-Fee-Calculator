@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { InputProps } from "../types/types";
 import bike from "../assets/motorcycle-delivery.svg";
+import logo from "../assets/wolt-logo.svg";
 import "./style.css";
 
 const Input = ({
@@ -12,15 +13,17 @@ const Input = ({
   setNumberOfItems,
   setShow,
 }: InputProps) => {
-  
   const now = new Date()
     .toISOString()
     .slice(0, new Date().toISOString().lastIndexOf(":"));
 
   return (
     <form className="m-5" onSubmit={() => setShow(true)}>
+      <div>
+        <img src={logo} className="wolt-logo" alt="logo" />
+      </div>
       <motion.img
-        className="bike"
+        className="bike-logo"
         animate={{
           x: [-100, 100, 0],
         }}

@@ -1,9 +1,11 @@
 .calculator {
-  font-size: 20px;
+  font-size: 25px;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
 }
 
 .sum {
-  color: #39aac2;
+  color: #05d1ff;
 }
 
 .container {
@@ -13,7 +15,7 @@
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
 
-.bike {
+.bike-logo {
   width: 80px;
   margin-top: -10px;
   object-fit: cover;
@@ -49,9 +51,21 @@ button.btn-return {
 
 @media screen and (max-width: 768px) {
   .container {
-    max-width: 23rem;
+    max-width: 30rem;
+    box-shadow: none;
   }
   .bike {
     width: 60px;
+  }
+  .wolt-logo {
+    margin-top: -4rem;
+    width: 140px;
+    object-fit: cover;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .wolt-logo {
+    display: none;
   }
 }
