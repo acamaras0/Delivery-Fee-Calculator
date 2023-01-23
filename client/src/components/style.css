@@ -63,14 +63,5 @@ label.col-form-label {
   .bike {
     width: 60px;
   }
-  .wolt-logo {
-    width: 140px;
-    object-fit: cover;
-  }
 }
 
-@media screen and (min-width: 768px) {
-  .wolt-logo {
-    display: none;
-  }
-}

@@ -17,6 +17,8 @@
 		background-color: white;
 	}
 	.App-logo {
-		display: none;
+		width: 140px;
+		height: 140px;
+		object-fit: cover;
 	}
 }

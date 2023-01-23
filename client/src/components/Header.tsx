@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <>
       <motion.img
-        className="bike-logo"
+        className="bike-logo mt-2"
         animate={{
           x: [-100, 100, 0],
         }}

@@ -1,7 +1,6 @@
 import { useState } from "react";
 import calculateFee from "../functions/calculateFee";
 import Header from "../components/Header";
-import Logo from "../components/Logo";
 import InputForm from "../components/InputForm";
 import DeliveryFee from "../components/DeliveryFee";
 import Footer from "../components/Footer";
@@ -48,7 +47,6 @@ const Home = () => {
 
 	return (
 		<>
-			<Logo />
 			<div className="container d-flex justify-content-center">
 				<div>
 					{show === false ? (
