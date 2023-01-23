@@ -7,7 +7,7 @@ function calculateFee({
   deliveryHour,
   deliveryMinute,
   deliveryDate,
-}: CalcProps) {
+}: CalcProps): number {
   let deliveryFee = 2;
 
   if (cartValue < 10) {
