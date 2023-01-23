@@ -45,15 +45,13 @@ const InputForm = ({
 			},
 		},
 		{
-			label: "Delivery date and time",
+			label: "Delivery date and time (UTC)",
 			type: "datetime-local",
 			min: now,
 			value: defaultDate,
 			onChange: (e: React.ChangeEvent<HTMLInputElement>) => {
 				setDefaultDate(e.target.value);
-				const datetime = new Date(e.target.value)
-					.toISOString()
-					.split("T");
+				const datetime = e.target.value.split("T");
 				const datestamp = new Date(datetime[0]);
 				const hour = datetime[1].split(":")[0];
 				const minute = datetime[1].split(":")[1];
