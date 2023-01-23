@@ -1,24 +1,22 @@
 .App {
-  text-align: center;
-  /* background-color: #aeaeaf2f; */
-  background-image: url(./assets/background.jpg);
-  background-size: cover;
-  min-height: 100vh;
+	text-align: center;
+	background-color: #aeaeaf2f;
+	min-height: 100vh;
 }
 
 .App-logo {
-  height: 160px;
-  width: 160px;
-  pointer-events: none;
-  margin-bottom: -15px;
-  margin-top: -15px;
+	height: 160px;
+	width: 160px;
+	pointer-events: none;
+	margin-bottom: -15px;
+	margin-top: -15px;
 }
 
 @media screen and (max-width: 768px) {
-  .App {
-    background-image: none;
-  }
-  .App-logo {
-    display: none;
-  }
+	.App {
+		background-color: white;
+	}
+	.App-logo {
+		display: none;
+	}
 }
