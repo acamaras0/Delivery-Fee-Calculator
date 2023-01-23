@@ -1,5 +1,5 @@
 import { useState } from "react";
-import CalculateFee from "../functions/CalculateFee";
+import calculateFee from "../functions/calculateFee";
 import Header from "../components/Header";
 import Logo from "../components/Logo";
 import InputForm from "../components/InputForm";
@@ -37,7 +37,7 @@ const Home = () => {
 		setShow(value);
 	};
 
-	const fee = CalculateFee({
+	const fee = calculateFee({
 		cartValue,
 		deliveryDistance,
 		numberOfItems,
