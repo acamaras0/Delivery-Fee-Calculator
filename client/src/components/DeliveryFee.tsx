@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import returnIcon from "../assets/return.svg";
 import { CalcProps } from "../types/types";
 import { BsStars } from "react-icons/bs";
+import returnIcon from "../assets/return.svg";
 import "./style.css";
 
 const DeliveryFee = ({

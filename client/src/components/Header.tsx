@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import bike from "../assets/motorcycle-delivery.svg";
-import logo from "../assets/wolt-logo.svg";
 import "./style.css";
 
 const Header = () => {
