@@ -25,7 +25,7 @@ function calculateFee({
 
   if (deliveryDistance > 1000) {
     const additionalDistance = deliveryDistance - 1000;
-    const additionalFee = Math.ceil(additionalDistance / 500) * 1;
+    const additionalFee = Math.ceil(additionalDistance / 500);
     deliveryFee += additionalFee;
   }
 

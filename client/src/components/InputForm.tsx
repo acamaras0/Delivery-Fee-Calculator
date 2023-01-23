@@ -72,7 +72,7 @@ const InputForm = ({
 								{item.label}
 							</label>
 							<input
-								className="form-control"
+								className="form-control font-weight-bold"
 								type={item.type}
 								step={item.step}
 								placeholder=""
