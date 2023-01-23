@@ -1,6 +1,6 @@
 import { CalcProps } from "../types/types";
 
-function calculateFee({
+function CalculateFee({
   cartValue,
   deliveryDistance,
   numberOfItems,
@@ -48,4 +48,4 @@ function calculateFee({
   return deliveryFee;
 }
 
-export default calculateFee;
+export default CalculateFee;

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import calculateFee from "../functions/calculateFee";
+import CalculateFee from "../functions/CalculateFee";
 import Header from "../components/Header";
 import Logo from "../components/Logo";
 import InputForm from "../components/InputForm";
@@ -37,7 +37,7 @@ const Home = () => {
 		setShow(value);
 	};
 
-	const fee = calculateFee({
+	const fee = CalculateFee({
 		cartValue,
 		deliveryDistance,
 		numberOfItems,
@@ -48,7 +48,7 @@ const Home = () => {
 
 	return (
 		<>
-      <Logo />
+			<Logo />
 			<div className="container d-flex justify-content-center">
 				<div>
 					{show === false ? (
