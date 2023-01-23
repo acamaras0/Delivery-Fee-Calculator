@@ -1,6 +1,8 @@
 .App {
   text-align: center;
-  background-color: #aeaeaf2f;
+  /* background-color: #aeaeaf2f; */
+  background-image: url(./assets/background.jpg);
+  background-size: cover;
   min-height: 100vh;
 }
 
@@ -14,7 +16,7 @@
 
 @media screen and (max-width: 768px) {
   .App {
-    background-color: white;
+    background-image: none;
   }
   .App-logo {
     display: none;
