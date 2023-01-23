@@ -1,24 +1,24 @@
 .App {
-	text-align: center;
-	background-color: #aeaeaf2f;
-	min-height: 100vh;
+  text-align: center;
+  background-color: #aeaeaf2f;
+  min-height: 100vh;
 }
 
 .App-logo {
-	height: 160px;
-	width: 160px;
-	pointer-events: none;
-	margin-bottom: -15px;
-	margin-top: -15px;
+  height: 160px;
+  width: 160px;
+  pointer-events: none;
+  margin-bottom: -15px;
+  margin-top: -15px;
 }
 
 @media screen and (max-width: 768px) {
-	.App {
-		background-color: white;
-	}
-	.App-logo {
-		width: 140px;
-		height: 140px;
-		object-fit: cover;
-	}
+  .App {
+    background-color: white;
+  }
+  .App-logo {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+  }
 }
