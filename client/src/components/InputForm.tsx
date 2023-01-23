@@ -12,7 +12,7 @@ const InputForm = ({
   setNumberOfItems,
   setShow,
 }: InputProps) => {
-  const now = new Date()
+  const now: string = new Date()
     .toISOString()
     .slice(0, new Date().toISOString().lastIndexOf(":"));
 
@@ -24,7 +24,7 @@ const InputForm = ({
       type: "number",
       step: 0.01,
       min: 0,
-      onChange: (e: React.ChangeEvent<HTMLInputElement>) => {
+      onChange: (e: React.ChangeEvent<HTMLInputElement>): void => {
         setCartValue(e.target.valueAsNumber);
       },
     },
@@ -32,7 +32,7 @@ const InputForm = ({
       label: "Items",
       type: "number",
       min: 0,
-      onChange: (e: React.ChangeEvent<HTMLInputElement>) => {
+      onChange: (e: React.ChangeEvent<HTMLInputElement>): void => {
         setNumberOfItems(e.target.valueAsNumber);
       },
     },
@@ -40,7 +40,7 @@ const InputForm = ({
       label: "Delivery distance (m)",
       type: "number",
       min: 0,
-      onChange: (e: React.ChangeEvent<HTMLInputElement>) => {
+      onChange: (e: React.ChangeEvent<HTMLInputElement>): void => {
         setDeliveryDistance(e.target.valueAsNumber);
       },
     },
@@ -49,7 +49,7 @@ const InputForm = ({
       type: "datetime-local",
       min: now,
       value: defaultDate,
-      onChange: (e: React.ChangeEvent<HTMLInputElement>) => {
+      onChange: (e: React.ChangeEvent<HTMLInputElement>): void => {
         setDefaultDate(e.target.value);
         const datetime = e.target.value.split("T");
         const datestamp = new Date(datetime[0]);
