@@ -2,7 +2,7 @@ import { ResultProps } from "../types/types";
 import { motion } from "framer-motion";
 import { BsStars } from "react-icons/bs";
 import returnIcon from "../assets/return.svg";
-import "./style.css";
+import "../style/style.css";
 
 const DeliveryFee = ({ deliveryFee }: ResultProps) => {
   return (

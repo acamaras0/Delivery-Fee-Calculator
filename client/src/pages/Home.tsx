@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import InputForm from "../components/InputForm";
 import DeliveryFee from "../components/DeliveryFee";
 import Footer from "../components/Footer";
+import Logo from "../components/Logo";
 
 const Home = () => {
   const [cartValue, setCartValue] = useState<number>(0);
@@ -33,6 +34,7 @@ const Home = () => {
 
   return (
     <>
+      <Logo />
       <div className="container d-flex justify-content-center">
         <div>
           {show === false ? (
