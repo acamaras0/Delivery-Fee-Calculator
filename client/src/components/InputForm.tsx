@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { InputProps } from "../types/types";
 import "./style.css";
 
@@ -12,6 +12,17 @@ const InputForm = ({
   setNumberOfItems,
   setShow,
 }: InputProps) => {
+  const formRef = useRef<HTMLFormElement>(null);
+
+  useEffect(() => {
+    if (formRef.current) {
+      formRef.current.addEventListener("submit", (event) => {
+        event.preventDefault();
+        setShow(true);
+      });
+    }
+  }, []);
+
   const now = new Date()
     .toISOString()
     .slice(0, new Date().toISOString().lastIndexOf(":"));
@@ -64,7 +75,7 @@ const InputForm = ({
 
   return (
     <>
-      <form className="m-5" onSubmit={() => setShow(true)}>
+      <form ref={formRef} className="m-5">
         {inputs?.map((item, index) => {
           return (
             <div className="form-group row" key={index}>
