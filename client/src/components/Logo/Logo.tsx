@@ -1,5 +1,5 @@
-import logo from "../assets/wolt-logo.svg";
-import "../style/style.css";
+import logo from "../../assets/wolt-logo.svg";
+import "./Logo.css";
 
 const Logo = () => {
   return (

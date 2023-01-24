@@ -1,9 +1,8 @@
 import { useState, useEffect, useRef } from "react";
-import { InputProps } from "../types/types";
-import { handleChange, handleDateChange } from "../functions/utils";
+import { InputProps } from "../../types/types";
+import { handleChange, handleDateChange } from "../../functions/utils";
 import { motion } from "framer-motion";
-import "../style/style.css";
-
+import "./InputForm.css";
 
 const InputForm = ({
   setCartValue,

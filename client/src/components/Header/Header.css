@@ -1,0 +1,12 @@
+.bike-logo {
+  width: 80px;
+  object-fit: cover;
+  filter: invert(61%) sepia(92%) saturate(5278%) hue-rotate(172deg)
+    brightness(101%) contrast(101%);
+}
+
+@media screen and (max-width: 768px) {
+  .bike-logo {
+    width: 60px;
+  }
+}

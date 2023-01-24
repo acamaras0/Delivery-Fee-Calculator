@@ -1,0 +1,30 @@
+.container {
+  max-width: 30rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+label.col-form-label {
+  letter-spacing: 0.03rem;
+}
+
+button.btn-calculate {
+  background-color: #009de0;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 15px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: 30rem;
+    box-shadow: none;
+  }
+}

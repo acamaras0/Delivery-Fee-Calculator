@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
-import bike from "../assets/motorcycle-delivery.svg";
-import "../style/style.css";
-
+import bike from "../../assets/motorcycle-delivery.svg";
+import "./Header.css";
 
 const Header = () => {
   return (

@@ -1,10 +1,10 @@
 import { useState } from "react";
 import calculateFee from "../functions/calculateFee";
-import Header from "../components/Header";
-import InputForm from "../components/InputForm";
-import DeliveryFee from "../components/DeliveryFee";
+import Header from "../components/Header/Header";
+import InputForm from "../components/InputForm/InputForm";
+import DeliveryFee from "../components/DeliveryFee/DeliveryFee";
 import Footer from "../components/Footer";
-import Logo from "../components/Logo";
+import Logo from "../components/Logo/Logo";
 
 const Home = () => {
   const [cartValue, setCartValue] = useState<number>(0);
