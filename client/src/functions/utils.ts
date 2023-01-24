@@ -11,9 +11,9 @@ export const handleDateChange =
     setDefaultDate: (value: string) => void
   ) =>
   (e: React.ChangeEvent<HTMLInputElement>) => {
-    const [date, time] = e.target.value.split("T");
-    const datestamp = new Date(date);
-    const [hour, minute] = time.split(":").map(Number);
+    const [date, time]: string[] = e.target.value.split("T");
+    const datestamp: Date = new Date(date);
+    const [hour, minute]: number[] = time.split(":").map(Number);
     setDeliveryHour(hour);
     setDeliveryMinute(minute);
     setDeliveryDate(datestamp);

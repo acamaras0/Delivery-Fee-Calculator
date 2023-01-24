@@ -22,15 +22,22 @@ const InputForm = ({
         setShow(true);
       });
     }
-  }, []);
+  }, [setShow]);
 
-  const now = new Date()
+  const now: string = new Date()
     .toISOString()
     .slice(0, new Date().toISOString().lastIndexOf(":"));
 
-  const [defaultDate, setDefaultDate] = useState(now);
+  const [defaultDate, setDefaultDate] = useState<string>(now);
 
-  const inputs = [
+  const inputs: Array<{
+    label: string;
+    type: string;
+    step?: number;
+    min: number | string;
+    value?: string;
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  }> = [
     {
       label: "Cart value (€)",
       type: "number",

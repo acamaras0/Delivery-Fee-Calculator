@@ -19,15 +19,15 @@ const calculateFee = ({
   deliveryMinute,
   deliveryDate,
 }: CalcProps): number => {
-  let deliveryFee = 2;
+  let deliveryFee: number = 2;
 
   if (cartValue < MIN_CART_VALUE) {
     deliveryFee += 10 - cartValue;
   }
 
   if (numberOfItems > MIN_NUMBER_OF_ITEMS) {
-    const additionalItems = numberOfItems - 5;
-    let additionalFee = additionalItems * 0.5;
+    const additionalItems: number = numberOfItems - 5;
+    let additionalFee: number = additionalItems * 0.5;
     if (numberOfItems > MAX_NUMBER_OF_ITEMS) {
       additionalFee += 1.2;
     }
@@ -35,12 +35,12 @@ const calculateFee = ({
   }
 
   if (deliveryDistance > MAX_DISTANCE) {
-    const additionalDistance = deliveryDistance - 1000;
-    const additionalFee = Math.ceil(additionalDistance / 500);
+    const additionalDistance: number = deliveryDistance - 1000;
+    const additionalFee: number = Math.ceil(additionalDistance / 500);
     deliveryFee += additionalFee;
   }
 
-  const fridayRush = deliveryDate.getDay() === 5;
+  const fridayRush: boolean = deliveryDate.getDay() === 5;
   if (
     fridayRush &&
     ((deliveryHour >= FRIDAY_RUSH_START_HOUR &&

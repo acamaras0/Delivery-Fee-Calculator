@@ -6,13 +6,13 @@ import DeliveryFee from "../components/DeliveryFee";
 import Footer from "../components/Footer";
 
 const Home = () => {
-  const [cartValue, setCartValue] = useState(0);
-  const [deliveryDistance, setDeliveryDistance] = useState(0);
-  const [numberOfItems, setNumberOfItems] = useState(0);
-  const [deliveryHour, setDeliveryHour] = useState(0);
-  const [deliveryMinute, setDeliveryMinute] = useState(0);
-  const [deliveryDate, setDeliveryDate] = useState(new Date());
-  const [show, setShow] = useState(false);
+  const [cartValue, setCartValue] = useState<number>(0);
+  const [deliveryDistance, setDeliveryDistance] = useState<number>(0);
+  const [numberOfItems, setNumberOfItems] = useState<number>(0);
+  const [deliveryHour, setDeliveryHour] = useState<number>(0);
+  const [deliveryMinute, setDeliveryMinute] = useState<number>(0);
+  const [deliveryDate, setDeliveryDate] = useState<Date>(new Date());
+  const [show, setShow] = useState<boolean>(false);
 
   const updateCartValue = (value: number) => setCartValue(value);
   const updateDeliveryDistance = (value: number) => setDeliveryDistance(value);
@@ -22,7 +22,7 @@ const Home = () => {
   const updateDeliveryDate = (value: Date) => setDeliveryDate(value);
   const updateShow = (value: boolean) => setShow(value);
 
-  const fee = calculateFee({
+  const fee: number = calculateFee({
     cartValue,
     deliveryDistance,
     numberOfItems,
