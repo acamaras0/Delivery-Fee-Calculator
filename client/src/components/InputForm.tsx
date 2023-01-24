@@ -12,60 +12,60 @@ const InputForm = ({
   setNumberOfItems,
   setShow,
 }: InputProps) => {
-  const now: string = new Date()
+  const now = new Date()
     .toISOString()
     .slice(0, new Date().toISOString().lastIndexOf(":"));
 
   const [defaultDate, setDefaultDate] = useState(now);
 
-  const input = [
+  const handleChange =
+    (setter: (value: number) => void) =>
+    (e: React.ChangeEvent<HTMLInputElement>) =>
+      setter(e.target.valueAsNumber);
+
+  const handleDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setDefaultDate(e.target.value);
+    const [date, time] = e.target.value.split("T");
+    const datestamp = new Date(date);
+    const [hour, minute] = time.split(":").map(Number);
+    setDeliveryHour(hour);
+    setDeliveryMinute(minute);
+    setDeliveryDate(datestamp);
+  };
+
+  const inputs = [
     {
       label: "Cart value (€)",
       type: "number",
       step: 0.01,
       min: 0,
-      onChange: (e: React.ChangeEvent<HTMLInputElement>): void => {
-        setCartValue(e.target.valueAsNumber);
-      },
+      onChange: handleChange(setCartValue),
     },
     {
       label: "Items",
       type: "number",
       min: 0,
-      onChange: (e: React.ChangeEvent<HTMLInputElement>): void => {
-        setNumberOfItems(e.target.valueAsNumber);
-      },
+      onChange: handleChange(setNumberOfItems),
     },
     {
       label: "Delivery distance (m)",
       type: "number",
       min: 0,
-      onChange: (e: React.ChangeEvent<HTMLInputElement>): void => {
-        setDeliveryDistance(e.target.valueAsNumber);
-      },
+      onChange: handleChange(setDeliveryDistance),
     },
     {
       label: "Delivery date and time (UTC)",
       type: "datetime-local",
       min: now,
       value: defaultDate,
-      onChange: (e: React.ChangeEvent<HTMLInputElement>): void => {
-        setDefaultDate(e.target.value);
-        const datetime = e.target.value.split("T");
-        const datestamp = new Date(datetime[0]);
-        const hour = datetime[1].split(":")[0];
-        const minute = datetime[1].split(":")[1];
-        setDeliveryHour(Number(hour));
-        setDeliveryMinute(Number(minute));
-        setDeliveryDate(datestamp);
-      },
+      onChange: handleDateChange,
     },
   ];
 
   return (
     <>
       <form className="m-5" onSubmit={() => setShow(true)}>
-        {input?.map((item, index) => {
+        {inputs?.map((item, index) => {
           return (
             <div className="form-group row" key={index}>
               <label className="col-form-label">{item.label}</label>

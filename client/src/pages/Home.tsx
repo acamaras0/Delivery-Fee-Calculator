@@ -14,27 +14,13 @@ const Home = () => {
   const [deliveryDate, setDeliveryDate] = useState(new Date());
   const [show, setShow] = useState(false);
 
-  const UpdateCartValue = (value: number) => {
-    setCartValue(value);
-  };
-  const UpdateDeliveryDistance = (value: number) => {
-    setDeliveryDistance(value);
-  };
-  const UpdateNumberOfItems = (value: number) => {
-    setNumberOfItems(value);
-  };
-  const UpdateDeliveryHour = (value: number) => {
-    setDeliveryHour(value);
-  };
-  const UpdateDeliveryMinute = (value: number) => {
-    setDeliveryMinute(value);
-  };
-  const UpdateDeliveryDate = (value: Date) => {
-    setDeliveryDate(value);
-  };
-  const UpdateShow = (value: boolean) => {
-    setShow(value);
-  };
+  const updateCartValue = (value: number) => setCartValue(value);
+  const updateDeliveryDistance = (value: number) => setDeliveryDistance(value);
+  const updateNumberOfItems = (value: number) => setNumberOfItems(value);
+  const updateDeliveryHour = (value: number) => setDeliveryHour(value);
+  const updateDeliveryMinute = (value: number) => setDeliveryMinute(value);
+  const updateDeliveryDate = (value: Date) => setDeliveryDate(value);
+  const updateShow = (value: boolean) => setShow(value);
 
   const fee = calculateFee({
     cartValue,
@@ -53,13 +39,13 @@ const Home = () => {
             <>
               <Header />
               <InputForm
-                setCartValue={UpdateCartValue}
-                setDeliveryDate={UpdateDeliveryDate}
-                setDeliveryDistance={UpdateDeliveryDistance}
-                setDeliveryHour={UpdateDeliveryHour}
-                setDeliveryMinute={UpdateDeliveryMinute}
-                setNumberOfItems={UpdateNumberOfItems}
-                setShow={UpdateShow}
+                setCartValue={updateCartValue}
+                setDeliveryDate={updateDeliveryDate}
+                setDeliveryDistance={updateDeliveryDistance}
+                setDeliveryHour={updateDeliveryHour}
+                setDeliveryMinute={updateDeliveryMinute}
+                setNumberOfItems={updateNumberOfItems}
+                setShow={updateShow}
               />
             </>
           ) : (
