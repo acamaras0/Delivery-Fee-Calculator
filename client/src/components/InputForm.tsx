@@ -1,6 +1,7 @@
-import { motion } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import { InputProps } from "../types/types";
+import { handleChange, handleDateChange } from "../functions/utils";
+import { motion } from "framer-motion";
 import "./style.css";
 
 const InputForm = ({
@@ -29,21 +30,6 @@ const InputForm = ({
 
   const [defaultDate, setDefaultDate] = useState(now);
 
-  const handleChange =
-    (setter: (value: number) => void) =>
-    (e: React.ChangeEvent<HTMLInputElement>) =>
-      setter(e.target.valueAsNumber);
-
-  const handleDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setDefaultDate(e.target.value);
-    const [date, time] = e.target.value.split("T");
-    const datestamp = new Date(date);
-    const [hour, minute] = time.split(":").map(Number);
-    setDeliveryHour(hour);
-    setDeliveryMinute(minute);
-    setDeliveryDate(datestamp);
-  };
-
   const inputs = [
     {
       label: "Cart value (€)",
@@ -69,7 +55,12 @@ const InputForm = ({
       type: "datetime-local",
       min: now,
       value: defaultDate,
-      onChange: handleDateChange,
+      onChange: handleDateChange(
+        setDeliveryHour,
+        setDeliveryMinute,
+        setDeliveryDate,
+        setDefaultDate
+      ),
     },
   ];
 
