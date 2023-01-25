@@ -14,7 +14,7 @@ const DeliveryFee = ({ deliveryFee }: ResultProps) => {
         transition={{ delay: 0.2 }}
         className="calculator"
       >
-        <p>
+        <p data-testid="delivery-fee">
           Delivery fee <BsStars color="#FAD02C" />
         </p>
         <p className="sum">{deliveryFee.toFixed(2)} €</p>
