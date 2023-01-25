@@ -73,7 +73,7 @@ const InputForm = ({
 
   return (
     <>
-      <form ref={formRef} className="m-5">
+      <form data-testid="form" ref={formRef} className="m-5">
         {inputs?.map((item, index) => {
           return (
             <div className="form-group row" key={index}>
@@ -81,6 +81,7 @@ const InputForm = ({
                 {item.label}
               </label>
               <input
+                data-testid="input"
                 id="input"
                 role={item.label}
                 className="form-control font-weight-bold"
