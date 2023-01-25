@@ -24,6 +24,7 @@ const DeliveryFee = ({ deliveryFee }: ResultProps) => {
           whileHover={{ scale: 1.05, transition: { duration: 0.5 } }}
           className="btn-return"
           type="reset"
+          data-testid="btn-return"
         >
           <img className="return" src={returnIcon} alt="return" />
         </motion.button>

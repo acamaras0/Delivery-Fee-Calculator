@@ -77,8 +77,12 @@ const InputForm = ({
         {inputs?.map((item, index) => {
           return (
             <div className="form-group row" key={index}>
-              <label className="col-form-label">{item.label}</label>
+              <label htmlFor={item.label} className="col-form-label">
+                {item.label}
+              </label>
               <input
+                id="input"
+                role={item.label}
                 className="form-control font-weight-bold"
                 type={item.type}
                 step={item.step}
@@ -95,6 +99,7 @@ const InputForm = ({
           whileHover={{ scale: 1.05, transition: { duration: 0.5 } }}
           className="btn-calculate"
           type="submit"
+          data-testid="btn-submit"
         >
           CALCULATE
         </motion.button>
