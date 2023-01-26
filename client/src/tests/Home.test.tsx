@@ -65,18 +65,4 @@ describe("Home", () => {
     const returnBtn = getByTestId("btn-return");
     expect(returnBtn).toBeInTheDocument();
   });
-
-  // it("should update the values when inputs are changed", async() => {
-  //   const { getAllByTestId } = render(<Home />);
-  //   const inputs = getAllByTestId("input");
-  //   fireEvent.change(inputs[0], { target: { value: "10" } });
-  //   fireEvent.change(inputs[1], { target: { value: "5" } });
-  //   fireEvent.change(inputs[2], { target: { value: "100" } });
-  //   fireEvent.change(inputs[3], { target: { value: "2021-05-01T12:00" } });
-
-  //   expect(inputs[0].value).toBe("10");
-  //   expect(inputs[1].value).toBe("5");
-  //   expect(inputs[2].value).toBe("100");
-  //   expect(inputs[3].value).toBe("2021-05-01T12:00");
-  // });
 });
