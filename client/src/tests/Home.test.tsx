@@ -1,4 +1,4 @@
-import { render, fireEvent, getAllByTestId } from "@testing-library/react";
+import { render, fireEvent} from "@testing-library/react";
 import Home from "../pages/Home";
 
 describe("Home", () => {

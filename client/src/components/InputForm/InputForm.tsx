@@ -81,11 +81,11 @@ const InputForm = ({
                 {item.label}
               </label>
               <input
+                className="form-control font-weight-bold"
                 data-testid="input"
                 id="input"
                 role={item.label}
                 name={item.label}
-                className="form-control font-weight-bold"
                 type={item.type}
                 step={item.step}
                 placeholder=""

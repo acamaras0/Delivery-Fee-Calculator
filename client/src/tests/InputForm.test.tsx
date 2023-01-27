@@ -124,6 +124,7 @@ describe("InputForm", () => {
     fireEvent.change(input[2], { target: { value: "100" } });
     fireEvent.change(input[3], { target: { value: "2023-05-01T12:00" } });
     fireEvent.click(submit);
+
     expect(setShow).toHaveBeenCalledWith(true);
   });
 });

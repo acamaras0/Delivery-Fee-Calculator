@@ -25,8 +25,8 @@ const calculateFee = ({
     deliveryFee += 10 - cartValue;
   }
 
-  if (numberOfItems > MIN_NUMBER_OF_ITEMS) {
-    const additionalItems: number = numberOfItems - 5;
+  if (numberOfItems >= MIN_NUMBER_OF_ITEMS) {
+    const additionalItems: number = numberOfItems - 4;
     let additionalFee: number = additionalItems * 0.5;
     if (numberOfItems > MAX_NUMBER_OF_ITEMS) {
       additionalFee += 1.2;
@@ -36,7 +36,7 @@ const calculateFee = ({
 
   if (deliveryDistance > MAX_DISTANCE) {
     const additionalDistance: number = deliveryDistance - 1000;
-    const additionalFee: number = Math.ceil(additionalDistance / 500);
+    const additionalFee: number = Math.ceil(additionalDistance / 500) * 1;
     deliveryFee += additionalFee;
   }
 
