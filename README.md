@@ -6,6 +6,8 @@ I have to admit that Typescript and Jest were totally new to me at the beginnig 
 
 For the styling I used Bootstrap with a little bit of CSS and Framer Motion for the tiny animations.
 
+## Usage
+
 In order to start this project, in the client directory run:
 - npm i
 - npm start
