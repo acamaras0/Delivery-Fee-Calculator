@@ -1,7 +1,11 @@
 export const handleChange =
   (setter: (value: number) => void) =>
-  (e: React.ChangeEvent<HTMLInputElement>) =>
-    setter(e.target.valueAsNumber);
+  (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.valueAsNumber;
+    if (value >= 0) {
+      setter(Number(value));
+    }
+  };
 
 export const handleDateChange =
   (

@@ -88,16 +88,27 @@ describe("calculateFee", () => {
     expect(calculateFee(props)).toBe(6);
   });
 
-  test("for bulk fee and additional distance and friday rush", () => {
+  test("for bulk fee and friday rush", () => {
     const props = {
-      cartValue: 10,
-      deliveryDistance: 2000,
+      cartValue: 5,
+      deliveryDistance: 800,
       numberOfItems: 12,
       deliveryHour: 17,
       deliveryMinute: 3,
       deliveryDate: new Date("2023-01-27"),
     };
-    expect(calculateFee(props)).toBe(9.6);
+    expect(calculateFee(props)).toBe(13.2);
   });
 
+  test("for extra distance and friday rush", () => {
+    const props = {
+      cartValue: 10,
+      deliveryDistance: 1501,
+      numberOfItems: 4,
+      deliveryHour: 17,
+      deliveryMinute: 3,
+      deliveryDate: new Date("2023-01-27"),
+    };
+    expect(calculateFee(props)).toBe(4.8);
+  });
 });

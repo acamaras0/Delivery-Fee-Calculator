@@ -14,7 +14,7 @@ export type InputProps = {
   setDeliveryHour: (value: number) => void;
   setDeliveryMinute: (value: number) => void;
   setNumberOfItems: (value: number) => void;
-  setShow: (value: boolean) => void;
+  setDeliveryFeeIsVisible: (value: boolean) => void;
 };
 
 export type ResultProps = {

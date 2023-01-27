@@ -22,7 +22,7 @@ function renderInputForm(props: Partial<InputProps> = {}) {
     setDeliveryDate() {
       return;
     },
-    setShow() {
+    setDeliveryFeeIsVisible() {
       return;
     },
   };
@@ -114,9 +114,11 @@ describe("InputForm", () => {
     expect(setDeliveryMinute).toHaveBeenCalledWith(0);
   });
 
-  it("should call the setShow with true when the form is submited with cart value, number of items, delivery distance and date", async () => {
-    const setShow = jest.fn();
-    const { findByTestId, findAllByTestId } = renderInputForm({ setShow });
+  it("should call the setDeliveryFeeIsVisible with true when the form is submited with cart value, number of items, delivery distance and date", async () => {
+    const setDeliveryFeeIsVisible = jest.fn();
+    const { findByTestId, findAllByTestId } = renderInputForm({
+      setDeliveryFeeIsVisible,
+    });
     const input = await findAllByTestId("input");
     const submit = await findByTestId("btn-submit");
     fireEvent.change(input[0], { target: { value: "10" } });
@@ -125,6 +127,6 @@ describe("InputForm", () => {
     fireEvent.change(input[3], { target: { value: "2023-05-01T12:00" } });
     fireEvent.click(submit);
 
-    expect(setShow).toHaveBeenCalledWith(true);
+    expect(setDeliveryFeeIsVisible).toHaveBeenCalledWith(true);
   });
 });

@@ -13,7 +13,8 @@ const Home = () => {
   const [deliveryHour, setDeliveryHour] = useState<number>(0);
   const [deliveryMinute, setDeliveryMinute] = useState<number>(0);
   const [deliveryDate, setDeliveryDate] = useState<Date>(new Date());
-  const [show, setShow] = useState<boolean>(false);
+  const [deliveryFeeIsVisible, setDeliveryFeeIsVisible] =
+    useState<boolean>(false);
 
   const updateCartValue = (value: number) => setCartValue(value);
   const updateDeliveryDistance = (value: number) => setDeliveryDistance(value);
@@ -21,7 +22,7 @@ const Home = () => {
   const updateDeliveryHour = (value: number) => setDeliveryHour(value);
   const updateDeliveryMinute = (value: number) => setDeliveryMinute(value);
   const updateDeliveryDate = (value: Date) => setDeliveryDate(value);
-  const updateShow = (value: boolean) => setShow(value);
+  const updateVisibility = (value: boolean) => setDeliveryFeeIsVisible(value);
 
   const fee: number = calculateFee({
     cartValue,
@@ -37,7 +38,7 @@ const Home = () => {
       <Logo />
       <div className="container d-flex justify-content-center">
         <div>
-          {show === false ? (
+          {deliveryFeeIsVisible === false ? (
             <>
               <Header />
               <InputForm
@@ -47,7 +48,7 @@ const Home = () => {
                 setDeliveryHour={updateDeliveryHour}
                 setDeliveryMinute={updateDeliveryMinute}
                 setNumberOfItems={updateNumberOfItems}
-                setShow={updateShow}
+                setDeliveryFeeIsVisible={updateVisibility}
               />
             </>
           ) : (

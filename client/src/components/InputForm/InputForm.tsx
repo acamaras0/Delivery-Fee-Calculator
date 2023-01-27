@@ -11,18 +11,19 @@ const InputForm = ({
   setDeliveryHour,
   setDeliveryMinute,
   setNumberOfItems,
-  setShow,
+  setDeliveryFeeIsVisible,
 }: InputProps) => {
+
   const formRef = useRef<HTMLFormElement>(null);
 
   useEffect(() => {
     if (formRef.current) {
-      formRef.current.addEventListener("submit", (event) => {
-        event.preventDefault();
-        setShow(true);
+      formRef.current.addEventListener("submit", (e) => {
+        e.preventDefault();
+        setDeliveryFeeIsVisible(true);
       });
     }
-  }, [setShow]);
+  }, [setDeliveryFeeIsVisible]);
 
   const now: string = new Date()
     .toISOString()
