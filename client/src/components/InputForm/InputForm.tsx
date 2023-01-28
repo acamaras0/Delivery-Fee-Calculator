@@ -83,14 +83,14 @@ const InputForm = ({
               <input
                 className="form-control font-weight-bold"
                 data-testid="input"
-                id="input"
+                id={item.label}
                 name={item.label}
                 type={item.type}
                 step={item.step}
-                placeholder=""
                 min={item.min}
                 value={item.value}
                 onChange={item.onChange}
+                placeholder=""
                 required
               />
             </div>
