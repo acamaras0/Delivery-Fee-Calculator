@@ -19,16 +19,15 @@ const DeliveryFee = ({ deliveryFee }: ResultProps) => {
         </p>
         <p className="sum">{deliveryFee.toFixed(2)} €</p>
       </motion.div>
-      <a href="/">
         <motion.button
           whileHover={{ scale: 1.05, transition: { duration: 0.5 } }}
           className="btn-return"
           type="reset"
           data-testid="btn-return"
+          onClick={() => window.location.reload()}
         >
           <img className="return" src={returnIcon} alt="return" />
         </motion.button>
-      </a>
     </div>
   );
 };
