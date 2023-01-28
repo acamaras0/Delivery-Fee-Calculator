@@ -14,9 +14,9 @@ describe("Home", () => {
     expect(inputs.length).toBe(4);
   });
 
-  it("should render a logo with the alt text 'logo'", () => {
-    const { getByAltText } = render(<Home />);
-    const logo = getByAltText("logo");
+  it("should render a logo with the test id 'logo'", () => {
+    const { getByTestId } = render(<Home />);
+    const logo = getByTestId("logo");
     expect(logo).toBeInTheDocument();
   });
 

@@ -2,8 +2,32 @@
   height: 150px;
   width: 150px;
   pointer-events: none;
-  margin-bottom: -30px;
+  margin-bottom: -40px;
   margin-top: -30px;
+}
+
+.base {
+  fill: rgba(0, 0, 0, 0.959);
+  stroke-dasharray: 8000;
+  animation: write 2s linear;
+}
+
+@keyframes write {
+  0% {
+    stroke-dashoffset: 10000;
+  }
+  20% {
+    stroke-dashoffset: 8000;
+  }
+  40% {
+    stroke-dashoffset: 6000;
+  }
+  80% {
+    stroke-dashoffset: 4000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
 }
 
 @media screen and (max-width: 768px) {

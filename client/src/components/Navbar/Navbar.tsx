@@ -1,10 +1,10 @@
-import logo from "../../assets/wolt-logo.svg";
+import Logo from "./Logo";
 import "./Navbar.css";
 
 const Navbar = () => {
   return (
     <nav className="mb-4">
-      <img src={logo} className="wolt-logo" alt="logo" />
+      <Logo />
     </nav>
   );
 };
