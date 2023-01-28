@@ -15,8 +15,6 @@ export const validateDateTime = (value: string) => {
     return false;
   } else if (isNaN(date.getTime())) {
     return false;
-  } else if (date < new Date()) {
-    return false;
   }
   return true;
 };
