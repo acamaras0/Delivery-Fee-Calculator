@@ -1,15 +1,15 @@
 .wolt-logo {
-  height: 160px;
-  width: 160px;
+  height: 150px;
+  width: 150px;
   pointer-events: none;
-  margin-bottom: -15px;
-  margin-top: -15px;
+  margin-bottom: -30px;
+  margin-top: -30px;
 }
 
 @media screen and (max-width: 768px) {
   .wolt-logo {
-    width: 140px;
-    height: 140px;
+    width: 130px;
+    height: 130px;
     object-fit: cover;
   }
 }

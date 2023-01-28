@@ -4,7 +4,7 @@ import Header from "../components/Header/Header";
 import InputForm from "../components/InputForm/InputForm";
 import DeliveryFee from "../components/DeliveryFee/DeliveryFee";
 import Footer from "../components/Footer";
-import Logo from "../components/Logo/Logo";
+import Navbar from "../components/Navbar/Navbar";
 
 const Home = () => {
   const [cartValue, setCartValue] = useState<number>(0);
@@ -35,7 +35,7 @@ const Home = () => {
 
   return (
     <>
-      <Logo />
+      <Navbar />
       <div className="container d-flex justify-content-center">
         <div>
           {deliveryFeeIsVisible === false ? (

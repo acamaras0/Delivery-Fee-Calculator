@@ -84,7 +84,6 @@ const InputForm = ({
                 className="form-control font-weight-bold"
                 data-testid="input"
                 id="input"
-                role={item.label}
                 name={item.label}
                 type={item.type}
                 step={item.step}

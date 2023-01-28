@@ -1,12 +1,12 @@
 import logo from "../../assets/wolt-logo.svg";
-import "./Logo.css";
+import "./Navbar.css";
 
-const Logo = () => {
+const Navbar = () => {
   return (
-    <>
+    <nav className="mb-4">
       <img src={logo} className="wolt-logo" alt="logo" />
-    </>
+    </nav>
   );
 };
 
-export default Logo;
+export default Navbar;
