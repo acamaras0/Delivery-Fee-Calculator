@@ -6,7 +6,9 @@
   margin-top: -30px;
 }
 
-.base {
+.logo-base {
+  stroke: black;
+  stroke-width: 2;
   fill: rgba(0, 0, 0, 0.959);
   stroke-dasharray: 8000;
   animation: write 2s linear;
@@ -34,6 +36,5 @@
   .wolt-logo {
     width: 130px;
     height: 130px;
-    object-fit: cover;
   }
 }
