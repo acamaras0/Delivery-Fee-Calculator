@@ -2,13 +2,14 @@
 
 For this assignment I used React with Typescript and I wrote the tests using the JavaScript testing framework called Jest.
 
-I have to admit that Typescript and Jest were totally new to me at the beginnig of this assignment, but I gave my best to learn how to use them on the go. It was a really good experience and I came to enjoy using Typescript and writing the tests.
+I have to admit that Typescript and Jest were totally new to me at the beginnig of this assignment, but I gave my best to learn how to use them on the go. It was a really good experience, I came to enjoy using Typescript and writing the tests and I plan to continue using this new knowledge in my future projects.
 
 For the styling I used Bootstrap with a little bit of CSS and Framer Motion for the tiny animations.
 
 ## Usage
 
 In order to start this project, in the client directory run:
+
 - npm i
 - npm start
 
@@ -17,8 +18,12 @@ The page will be available at http://localhost:3000/ .
 I also deployed the app at https://delivery-fee-calculator-zeye.onrender.com/ .
 
 In order to run the tests, in the client directory run:
+
 - npm test
 
-The tests can be found in the tests folder. 
-I wrote in total 40 tests: render tests and also tests for testing the calculator logic. 
+The tests can be found in the tests folder.
+I wrote in total 8 test suites including 50 tests:
 
+- render tests
+- valid and invalid input tests
+- tests for testing the calculator logic

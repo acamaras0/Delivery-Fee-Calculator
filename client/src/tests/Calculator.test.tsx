@@ -1,4 +1,4 @@
-import calculateFee from "../functions/calculateFee";
+import calculateFee from "../utils/calculateFee";
 
 describe("calculateFee", () => {
   it("should return 0 if cartValue is 100", () => {

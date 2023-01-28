@@ -1,5 +1,5 @@
 import { useState } from "react";
-import calculateFee from "../functions/calculateFee";
+import calculateFee from "../utils/calculateFee";
 import Header from "../components/Header/Header";
 import InputForm from "../components/InputForm/InputForm";
 import DeliveryFee from "../components/DeliveryFee/DeliveryFee";

@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { InputProps } from "../../types/types";
-import { handleChange, handleDateChange } from "../../functions/utils";
+import { handleChange, handleDateChange } from "../../utils/handleChange";
 import { motion } from "framer-motion";
 import "./InputForm.css";
 
@@ -13,7 +13,6 @@ const InputForm = ({
   setNumberOfItems,
   setDeliveryFeeIsVisible,
 }: InputProps) => {
-
   const formRef = useRef<HTMLFormElement>(null);
 
   useEffect(() => {

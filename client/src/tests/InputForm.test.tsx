@@ -64,12 +64,38 @@ describe("InputForm", () => {
     });
   });
 
+  it("should call the setDeliveryFeeIsVisible with true when the form is submited with cart value, number of items, delivery distance and date", async () => {
+    const setDeliveryFeeIsVisible = jest.fn();
+    const { findByTestId, findAllByTestId } = renderInputForm({
+      setDeliveryFeeIsVisible,
+    });
+    const input = await findAllByTestId("input");
+    const submit = await findByTestId("btn-submit");
+    fireEvent.change(input[0], { target: { value: "10" } });
+    fireEvent.change(input[1], { target: { value: "5" } });
+    fireEvent.change(input[2], { target: { value: "100" } });
+    fireEvent.change(input[3], { target: { value: "2023-05-01T12:00" } });
+    fireEvent.click(submit);
+
+    expect(setDeliveryFeeIsVisible).toHaveBeenCalledWith(true);
+  });
+
+  // tests for valid inputs
+
   it("should allow entering a cart value", async () => {
     const setCartValue = jest.fn();
     const { findAllByTestId } = renderInputForm({ setCartValue });
     const input = await findAllByTestId("input");
     fireEvent.change(input[0], { target: { value: "10" } });
     expect(setCartValue).toHaveBeenCalledWith(10);
+  });
+
+  it("should allow entering a cart value with decimals", async () => {
+    const setCartValue = jest.fn();
+    const { findAllByTestId } = renderInputForm({ setCartValue });
+    const input = await findAllByTestId("input");
+    fireEvent.change(input[0], { target: { value: "1.70" } });
+    expect(setCartValue).toHaveBeenCalledWith(1.7);
   });
 
   it("should allow entering a number of items", async () => {
@@ -114,19 +140,77 @@ describe("InputForm", () => {
     expect(setDeliveryMinute).toHaveBeenCalledWith(0);
   });
 
-  it("should call the setDeliveryFeeIsVisible with true when the form is submited with cart value, number of items, delivery distance and date", async () => {
-    const setDeliveryFeeIsVisible = jest.fn();
-    const { findByTestId, findAllByTestId } = renderInputForm({
-      setDeliveryFeeIsVisible,
-    });
-    const input = await findAllByTestId("input");
-    const submit = await findByTestId("btn-submit");
-    fireEvent.change(input[0], { target: { value: "10" } });
-    fireEvent.change(input[1], { target: { value: "5" } });
-    fireEvent.change(input[2], { target: { value: "100" } });
-    fireEvent.change(input[3], { target: { value: "2023-05-01T12:00" } });
-    fireEvent.click(submit);
+  // tests for invalid inputs
 
-    expect(setDeliveryFeeIsVisible).toHaveBeenCalledWith(true);
+  it("should not allow entering a negative cart value", async () => {
+    const setCartValue = jest.fn();
+    const { findAllByTestId } = renderInputForm({ setCartValue });
+    const input = await findAllByTestId("input");
+    fireEvent.change(input[0], { target: { value: "-10" } });
+    expect(setCartValue).not.toHaveBeenCalled();
+  });
+
+  it("should not allow entering a faulty cart value", async () => {
+    const setCartValue = jest.fn();
+    const { findAllByTestId } = renderInputForm({ setCartValue });
+    const input = await findAllByTestId("input");
+    fireEvent.change(input[0], { target: { value: "1.70.1" } });
+    expect(setCartValue).not.toHaveBeenCalled();
+  });
+
+  it("should not allow entering a negative number of items", async () => {
+    const setNumberOfItems = jest.fn();
+    const { findAllByTestId } = renderInputForm({ setNumberOfItems });
+    const input = await findAllByTestId("input");
+    fireEvent.change(input[1], { target: { value: "-5" } });
+    expect(setNumberOfItems).not.toHaveBeenCalled();
+  });
+
+  it("should not allow entering a negative delivery distance", async () => {
+    const setDeliveryDistance = jest.fn();
+    const { findAllByTestId } = renderInputForm({ setDeliveryDistance });
+    const input = await findAllByTestId("input");
+    fireEvent.change(input[2], { target: { value: "-100" } });
+    expect(setDeliveryDistance).not.toHaveBeenCalled();
+  });
+
+  it("should not allow entering a negative delivery date", async () => {
+    const setDeliveryDate = jest.fn();
+    const { findAllByTestId } = renderInputForm({ setDeliveryDate });
+    const input = await findAllByTestId("input");
+    fireEvent.change(input[3], { target: { value: "20-05-01T12:00" } });
+    expect(setDeliveryDate).not.toHaveBeenCalled();
+  });
+
+  it("should not allow entering a negative delivery hour", async () => {
+    const setDeliveryHour = jest.fn();
+    const { findAllByTestId } = renderInputForm({ setDeliveryHour });
+    const input = await findAllByTestId("input");
+    fireEvent.change(input[3], { target: { value: "2023-05-01T:00" } });
+    expect(setDeliveryHour).not.toHaveBeenCalled();
+  });
+
+  it("should not allow entering a negative delivery minute value", async () => {
+    const setDeliveryMinute = jest.fn();
+    const { findAllByTestId } = renderInputForm({ setDeliveryMinute });
+    const input = await findAllByTestId("input");
+    fireEvent.change(input[3], { target: { value: "-1" } });
+    expect(setDeliveryMinute).not.toHaveBeenCalled();
+  });
+
+  it("should not allow entering a string as cart value", async () => {
+    const setCartValue = jest.fn();
+    const { findAllByTestId } = renderInputForm({ setCartValue });
+    const input = await findAllByTestId("input");
+    fireEvent.change(input[3], { target: { value: "cart" } });
+    expect(setCartValue).not.toHaveBeenCalled();
+  });
+
+  it("should not allow entering a string as number of items", async () => {
+    const setNumberOfItems = jest.fn();
+    const { findAllByTestId } = renderInputForm({ setNumberOfItems });
+    const input = await findAllByTestId("input");
+    fireEvent.change(input[1], { target: { value: "items" } });
+    expect(setNumberOfItems).not.toHaveBeenCalled();
   });
 });
