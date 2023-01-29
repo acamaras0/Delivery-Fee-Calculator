@@ -4,7 +4,7 @@ This project is a delivery fee calculator that allows users to input their cart 
 
 ## Usage
 
-In order to start this project, in the client directory run:
+In order to start this project, in the client directory, run:
 
 - npm install
 - npm start
@@ -15,7 +15,7 @@ I also deployed the app at https://delivery-fee-calculator-zeye.onrender.com/ .
 
 ## Testing
 
-In order to run the tests, in the client directory run:
+In order to run the tests, in the client directory, run:
 
 - npm test
 
@@ -28,5 +28,5 @@ I wrote in total 8 test suites including 50 tests:
 
 ## Conclusion
 
-I have to admit that Typescript and Jest were totally new to me at the beginnig of this assignment, but I quickly learned how to use them. It was a really good experience, I came to enjoy using Typescript and writing the tests and I plan to continue using this new knowledge in my future projects.
+I have to admit that Typescript and Jest were not completely familiar to me at the beginning of this assignment, but I quickly learned how to use them. It was a really good experience, I came to enjoy using Typescript and writing the tests, and I plan to continue using this new knowledge in my future projects.
 I aimed to keep the solution simple in terms of both code and user experience.
